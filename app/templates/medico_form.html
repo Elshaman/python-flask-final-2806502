@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='style.css') }}">
+</head>
+<body>
+    <h1>Nuevo medico</h1>
+    <form action="" method="post" novalidate>
+        <p>
+            <input type="text" name="username" />
+        </p>
+        <p>
+           <input type="password" name="password" />
+        </p>
+        <p>
+            <input type="email" name="email" />
+         </p>
+         <p>
+            <select name="spec">
+                {% for spec in specialities %}
+                    <option> {{ spec }}</option>
+                {% endfor %}
+            </select>
+         </p>
+        <p><button type="submit">
+            enviar
+        </button></p>
+    </form>
+</body>
+</html>
